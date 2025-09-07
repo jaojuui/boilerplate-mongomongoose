@@ -11,16 +11,16 @@ mongoose.connect(process.env.MONGO_URI, {
 .catch((err) => console.error('❌ MongoDB Error:', err));
 
 
-// ✅ เพิ่มส่วนนี้
-let personSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  age: Number,
-  favoriteFoods: [String]
-});
-
-Person = mongoose.model("Person", personSchema); // ✅ สำคัญมาก
-
-
+let Person;
+const personSchema = function(done) {
+  const person = new Person({
+    name: 'John Doe',
+    age: 30,
+    favoriteFoods: ['pizza', 'pasta']
+  });
+  if (error) return done(error);
+  done(null, result);
+};
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
