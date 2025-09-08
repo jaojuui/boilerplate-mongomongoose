@@ -45,7 +45,10 @@ const createManyPeople = (arrayOfPeople, done) => {
     age:21,
     favoriteFoods:["pepsi","suki"]
   })
-  done(null ,data);
+  person.save(function(err,data){
+    if(err) return console.error(err);
+    done(null ,data);
+  })
 };
 
 const findPeopleByName = (personName, done) => {
