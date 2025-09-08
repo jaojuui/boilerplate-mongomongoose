@@ -36,7 +36,16 @@ const createAndSavePerson = (done) => {
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
-  done(null /*, data*/);
+  Model.create({
+    name:"Lekie_dev",
+    age:20,
+    favoriteFoods:["pizza","burger"]
+  },{
+    name:"Jaojui_dev",
+    age:21,
+    favoriteFoods:["pepsi","suki"]
+  })
+  done(null ,data);
 };
 
 const findPeopleByName = (personName, done) => {
