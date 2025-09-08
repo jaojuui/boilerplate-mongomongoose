@@ -36,7 +36,7 @@ const createAndSavePerson = (done) => {
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
-  Model.create({
+  Person.create({
     name:"Lekie_dev",
     age:20,
     favoriteFoods:["pizza","burger"]
