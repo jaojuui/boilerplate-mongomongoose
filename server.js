@@ -136,6 +136,13 @@ router.post("/create-many-people", function (req, res, next) {
   });
 });
 
+const getAllPeople = require("./myApp.js").getAllPeople;
+router.get("/getUser", (req, res) => {
+  getAllPeople((err, people) => {
+    if (err) return next(err);
+    res.json(people);
+  });
+});
 const findByName = require("./myApp.js").findPeopleByName;
 router.post("/find-all-by-name", function (req, res, next) {
   let t = setTimeout(() => {
